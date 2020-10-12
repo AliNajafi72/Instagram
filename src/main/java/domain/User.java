@@ -7,6 +7,10 @@ import java.util.ArrayList;
 import java.util.List;
 
 @Entity
+@NamedQuery(
+        name = "User_FIND_BY_ID",
+        query = "SELECT u FROM User u WHERE u.username=:usename"
+)
 @Table(name = "users")
 public class User {
     @Id
@@ -21,6 +25,8 @@ public class User {
     private String password;
     @Column(name = "PHONE_NUMBER")
     private String phoneNumber;
+    @Column(name = "VERIFICATION_CODE")
+    private Integer verificationCode;
     @OneToMany
     @JoinColumn(name = "FK_USER")
     private List<Post> posts = new ArrayList<>();
