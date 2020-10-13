@@ -39,15 +39,33 @@ public class UserDAOImpl implements UserDAO {
     @Override
     public void save(User user) {
         EntityManager entityManager = EntityManagerFactorySingleton.getEntityManagerFactoryInstance().createEntityManager();
-        entityManager.getTransaction().begin();
-        entityManager.persist(user);
-        entityManager.getTransaction().commit();
-        entityManager.flush();
+        try {
+            entityManager.getTransaction().begin();
+            entityManager.persist(user);
+            entityManager.flush();
+            entityManager.getTransaction().commit();
+        }catch (Exception e) {
+            e.printStackTrace();
+            entityManager.getTransaction().rollback();
+        } finally {
+            entityManager.close();
+        }
     }
 
     @Override
     public void update(User user) {
-
+        EntityManager entityManager = EntityManagerFactorySingleton.getEntityManagerFactoryInstance().createEntityManager();
+        try {
+            entityManager.getTransaction().begin();
+            entityManager.merge(user);
+            entityManager.flush();
+            entityManager.getTransaction().commit();
+        }catch (Exception e) {
+            e.printStackTrace();
+            entityManager.getTransaction().rollback();
+        } finally {
+            entityManager.close();
+        }
     }
 
     @Override

@@ -2,7 +2,9 @@ package ir.maktabsharif.service;
 
 import ir.maktabsharif.domain.Post;
 import ir.maktabsharif.domain.PostImage;
+import ir.maktabsharif.domain.User;
 import ir.maktabsharif.repository.impls.PostRepositoryImpl;
+import ir.maktabsharif.repository.impls.UserRepositoryImpl;
 import ir.maktabsharif.util.ScannerSingleton;
 
 import java.io.File;
@@ -11,7 +13,8 @@ import java.util.Date;
 
 public class PostService {
     PostRepositoryImpl postRepositoryImpl = new PostRepositoryImpl();
-    public void addPost() {
+    UserRepositoryImpl userRepositoryImpl = new UserRepositoryImpl();
+    public void addPost(User user) {
         System.out.println("Please enter post content:");
         String content = ScannerSingleton.getScannerInstance().nextLine();
         System.out.println("Please enter image url:");
@@ -32,5 +35,7 @@ public class PostService {
         postImage.setImage(bFile);
         post.addImage(postImage);
         postRepositoryImpl.save(post);
+        user.addPost(post);
+        userRepositoryImpl.update(user);
     }
 }

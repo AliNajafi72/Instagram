@@ -77,6 +77,10 @@ public class User {
         this.verificationCode = verificationCode;
     }
 
+    public void addPost(Post post) {
+        this.posts.add(post);
+    }
+
     @Override
     public String toString() {
         return "User{" +

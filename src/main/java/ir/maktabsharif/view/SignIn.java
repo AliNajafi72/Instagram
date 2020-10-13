@@ -10,7 +10,7 @@ public class SignIn {
         UserService userService = new UserService();
         Optional<User> userOptional = userService.signIn();
         if (userOptional.isPresent()) {
-            Profile.index();
+            Profile.index(userOptional.get());
         } else {
             Home.index();
         }

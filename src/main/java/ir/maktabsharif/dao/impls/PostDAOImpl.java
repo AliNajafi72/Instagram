@@ -22,10 +22,17 @@ public class PostDAOImpl implements PostDAO {
     @Override
     public void save(Post post) {
         EntityManager entityManager = EntityManagerFactorySingleton.getEntityManagerFactoryInstance().createEntityManager();
-        entityManager.getTransaction().begin();
-        entityManager.persist(post);
-        entityManager.getTransaction().commit();
-        entityManager.flush();
+        try {
+            entityManager.getTransaction().begin();
+            entityManager.persist(post);
+            entityManager.flush();
+            entityManager.getTransaction().commit();
+        } catch (Exception e) {
+            e.printStackTrace();
+            entityManager.getTransaction().rollback();
+        } finally {
+            entityManager.close();
+        }
     }
 
     @Override
