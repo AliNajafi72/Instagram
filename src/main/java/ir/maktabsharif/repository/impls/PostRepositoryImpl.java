@@ -11,7 +11,8 @@ public class PostRepositoryImpl implements PostRepository {
     PostDAOImpl postDAOImpl = new PostDAOImpl();
     @Override
     public Optional<Post> get(long id) {
-        return Optional.empty();
+        Optional<Post> postOptional = postDAOImpl.get(id);
+        return postOptional;
     }
 
     @Override
@@ -31,6 +32,7 @@ public class PostRepositoryImpl implements PostRepository {
 
     @Override
     public void delete(Post post) {
-
+        postDAOImpl.delete(post);
     }
+
 }

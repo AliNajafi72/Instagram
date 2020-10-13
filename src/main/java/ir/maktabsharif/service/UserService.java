@@ -1,9 +1,11 @@
 package ir.maktabsharif.service;
 
+import ir.maktabsharif.domain.Post;
 import ir.maktabsharif.domain.User;
 import ir.maktabsharif.repository.impls.UserRepositoryImpl;
 import ir.maktabsharif.util.ScannerSingleton;
 
+import java.util.List;
 import java.util.Optional;
 
 public class UserService {
@@ -37,5 +39,18 @@ public class UserService {
         }
     }
 
+    public void printAllPosts(Long userId) {
+        List<Post> posts = userRepositoryImpl.get(userId).get().getPosts();
+        for (Post post:posts) {
+            System.out.println("Post id: " + posts.indexOf(post));
+            System.out.println("Content: " + post.getContent());
+            System.out.println("==========");
+        }
+    }
 
+    public void deletePost(User user) {
+        System.out.println("Please enter post id to delete:");
+        Integer postIndex = Integer.parseInt(ScannerSingleton.getScannerInstance().nextLine());
+        userRepositoryImpl.deletePostFromUser(user.getUserId(), postIndex);
+    }
 }

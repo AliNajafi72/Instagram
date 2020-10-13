@@ -29,6 +29,10 @@ public class User {
     @JoinColumn(name = "FK_USER")
     private List<Post> posts = new ArrayList<>();
 
+    public Long getUserId() {
+        return userId;
+    }
+
     public String getFullName() {
         return fullName;
     }

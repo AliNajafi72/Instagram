@@ -16,7 +16,7 @@ public class UserRepositoryImpl implements UserRepository {
 
     @Override
     public Optional<User> get(long id) {
-        return Optional.empty();
+        return userDAOImpl.get(id);
     }
 
     @Override
@@ -37,5 +37,9 @@ public class UserRepositoryImpl implements UserRepository {
     @Override
     public void delete(User user) {
 
+    }
+    @Override
+    public void deletePostFromUser(Long userId, Integer postIndex) {
+        userDAOImpl.deletePostFromUser(userId, postIndex);
     }
 }

@@ -28,7 +28,8 @@ public class UserDAOImpl implements UserDAO {
 
     @Override
     public Optional<User> get(long id) {
-        return Optional.empty();
+        EntityManager entityManager = EntityManagerFactorySingleton.getEntityManagerFactoryInstance().createEntityManager();
+        return Optional.of(entityManager.find(User.class, id));
     }
 
     @Override
@@ -70,6 +71,24 @@ public class UserDAOImpl implements UserDAO {
 
     @Override
     public void delete(User user) {
+
+    }
+
+    @Override
+    public void deletePostFromUser(Long userId, Integer postIndex) {
+        EntityManager entityManager = EntityManagerFactorySingleton.getEntityManagerFactoryInstance().createEntityManager();
+        try {
+            entityManager.getTransaction().begin();
+            User user = entityManager.find(User.class, userId);
+            user.getPosts().remove(postIndex);
+            entityManager.flush();
+            entityManager.getTransaction().commit();
+        } catch (Exception e) {
+            e.printStackTrace();
+            entityManager.getTransaction().rollback();
+        } finally {
+            entityManager.close();
+        }
 
     }
 }
