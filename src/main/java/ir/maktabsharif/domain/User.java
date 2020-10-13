@@ -25,7 +25,7 @@ public class User {
     private String phoneNumber;
     @Column(name = "VERIFICATION_CODE")
     private Integer verificationCode;
-    @OneToMany
+    @OneToMany(cascade = CascadeType.ALL, orphanRemoval = true)
     @JoinColumn(name = "FK_USER")
     private List<Post> posts = new ArrayList<>();
 

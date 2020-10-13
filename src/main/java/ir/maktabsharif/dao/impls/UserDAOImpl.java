@@ -81,6 +81,7 @@ public class UserDAOImpl implements UserDAO {
             entityManager.getTransaction().begin();
             User user = entityManager.find(User.class, userId);
             user.getPosts().remove(postIndex);
+            entityManager.merge(user);
             entityManager.flush();
             entityManager.getTransaction().commit();
         } catch (Exception e) {
