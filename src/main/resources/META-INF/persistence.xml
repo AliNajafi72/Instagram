@@ -13,7 +13,6 @@
 		<properties>
 			<property name="hibernate.dialect" value="org.hibernate.dialect.MySQL5Dialect" />
 			<property name="hibernate.generate_statistics" value="true" />
-
 			<property name="javax.persistence.jdbc.driver" value="com.mysql.jdbc.Driver" />
 			<property name="javax.persistence.jdbc.url" value="jdbc:mysql://127.0.0.1:3306/instagram?autoRecconect=true&amp;charachterEncoding=UTF-8&amp;userSSL=false" />
 			<property name="javax.persistence.jdbc.user" value="root" />
