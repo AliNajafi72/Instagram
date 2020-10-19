@@ -7,7 +7,6 @@ import java.util.Set;
 
 public class SiteController {
     private static final String controllerPackageAddress = "ir.maktabsharif.controller";
-
     public void index(String url) {
         Reflections reflections = new Reflections(controllerPackageAddress);
         Set<Class<? extends Controller>> classes = reflections.getSubTypesOf(Controller.class);
@@ -22,7 +21,6 @@ public class SiteController {
         for (Method method : methods) {
             methodsHashMap.put(method.getName(), method);
         }
-
         Method selectedMethod = methodsHashMap.get(urlArray[1]);
         try {
             selectedMethod.invoke(selectedClass.getConstructor().newInstance());
