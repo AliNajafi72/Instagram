@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="DataSourceManagerImpl" format="xml" multifile-model="true">
-    <data-source source="LOCAL" name="instagram@localhost" uuid="8fc5bf5b-0a15-4ca6-a25d-14c413406f18">
+    <data-source source="LOCAL" name="instagram@localhost" uuid="22104e36-8d78-4828-ad13-81675fe70f99">
       <driver-ref>mysql.8</driver-ref>
       <synchronize>true</synchronize>
       <jdbc-driver>com.mysql.cj.jdbc.Driver</jdbc-driver>

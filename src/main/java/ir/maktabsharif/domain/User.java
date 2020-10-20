@@ -6,10 +6,17 @@ import java.util.List;
 
 @Entity
 @Table(name = "users")
-@NamedQuery(
-        name = "USER_FIND_BY_ID",
-        query = "SELECT u FROM User u WHERE u.username=:username"
-)
+
+@NamedQueries({
+        @NamedQuery(
+                name = "USER_FIND_BY_USERNAME",
+                query = "SELECT u FROM User u WHERE u.username=:username"
+        ),
+        @NamedQuery(
+                name = "USER_SEARCH",
+                query = "SELECT u FROM User u WHERE username LIKE :keyword"
+        ),
+})
 public class User {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -28,6 +35,13 @@ public class User {
     @OneToMany(cascade = CascadeType.ALL, orphanRemoval = true)
     @JoinColumn(name = "FK_USER")
     private List<Post> posts = new ArrayList<>();
+    @ManyToMany(cascade = CascadeType.ALL)
+    @JoinTable(
+            name = "USER_FOLLOWER_USER",
+            joinColumns = {@JoinColumn(name = "FK_USER")},
+            inverseJoinColumns = {@JoinColumn(name = "FK_FOLLOWER")}
+    )
+    private List<User> followers = new ArrayList<>();
 
     public Long getUserId() {
         return userId;
@@ -83,6 +97,22 @@ public class User {
 
     public void addPost(Post post) {
         this.posts.add(post);
+    }
+
+    public void addFollower(User user) {
+        followers.add(user);
+    }
+
+    public void removeFollower(User user) {
+        followers.remove(user);
+    }
+
+    public List<User> getFollowers() {
+        return followers;
+    }
+
+    public void setFollowers(List<User> followers) {
+        this.followers = followers;
     }
 
     @Override

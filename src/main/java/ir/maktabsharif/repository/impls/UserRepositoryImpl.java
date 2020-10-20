@@ -13,7 +13,7 @@ public class UserRepositoryImpl implements UserRepository {
     @Override
     public Optional<User> findUserByUsername(String username) {
         EntityManager entityManager = EntityManagerFactorySingleton.getEntityManagerFactoryInstance().createEntityManager();
-        TypedQuery<User> query = entityManager.createNamedQuery("USER_FIND_BY_ID", User.class);
+        TypedQuery<User> query = entityManager.createNamedQuery("USER_FIND_BY_USERNAME", User.class);
         query.setParameter("username", username);
         List<User> users = query.getResultList();
         Optional<User> userOptional;
@@ -91,5 +91,13 @@ public class UserRepositoryImpl implements UserRepository {
             entityManager.close();
         }
 
+    }
+
+    @Override
+    public List<User> searchUser(String keyWord) {
+        EntityManager entityManager = EntityManagerFactorySingleton.getEntityManagerFactoryInstance().createEntityManager();
+        TypedQuery<User> query = entityManager.createNamedQuery("USER_SEARCH", User.class);
+        query.setParameter("keyword", "%" + keyWord + "%");
+        return query.getResultList();
     }
 }
