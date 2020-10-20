@@ -23,11 +23,11 @@ ir/maktabsharif/controller/UserController.java
  ir.maktabsharif.controller.UserController
 ir/maktabsharif/domain/User.java
  ir.maktabsharif.domain.User
-ir/maktabsharif/controller/PostController.java
- ir.maktabsharif.controller.PostController
+ir/maktabsharif/repository/impls/UserRepositoryImpl.java
+ ir.maktabsharif.repository.impls.UserRepositoryImpl
 ir/maktabsharif/repository/impls/PostRepositoryImpl.java
  ir.maktabsharif.repository.impls.PostRepositoryImpl
 ir/maktabsharif/domain/Post.java
  ir.maktabsharif.domain.Post
-ir/maktabsharif/repository/impls/UserRepositoryImpl.java
- ir.maktabsharif.repository.impls.UserRepositoryImpl
+ir/maktabsharif/controller/PostController.java
+ ir.maktabsharif.controller.PostController

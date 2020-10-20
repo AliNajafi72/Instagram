@@ -60,7 +60,7 @@ public class PostController implements Controller {
         }
     }
 
-    public void likePost() {
+    public int likePost() {
         System.out.println("Please enter post id to like:");
         long postId = Long.parseLong(ScannerSingleton.getScannerInstance().nextLine());
         Optional<Post> postOptional = postRepository.get(postId);
@@ -70,6 +70,7 @@ public class PostController implements Controller {
             post.setLikeNumber(post.getLikeNumber() + 1);
         }
         postRepository.update(post);
+        return post.getLikeNumber();
     }
 
     public void addComment() {
@@ -86,12 +87,13 @@ public class PostController implements Controller {
         postRepository.update(post);
     }
 
-    public void searchPosts() {
+    public List<Post> searchPosts() {
         System.out.println("Please enter key word to search:");
         String keyWord = ScannerSingleton.getScannerInstance().nextLine();
         List<Post> posts = postRepository.searchPosts(keyWord);
         for (Post post:posts) {
             System.out.println(post.toString());
         }
+        return posts;
     }
 }
