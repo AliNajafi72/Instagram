@@ -30,7 +30,10 @@ class PostControllerTest {
 
     @Test
     void likePost() {
-
+        String postId = "2";
+        ByteArrayInputStream inputStream = new ByteArrayInputStream(postId.getBytes());
+        System.setIn(inputStream);
+        assertEquals(9, postController.likePost());
     }
 
     @Test
