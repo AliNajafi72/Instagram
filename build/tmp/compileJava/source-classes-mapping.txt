@@ -28,12 +28,12 @@ ir/maktabsharif/repository/impls/PostRepositoryImpl.java
  ir.maktabsharif.repository.impls.PostRepositoryImpl
 ir/maktabsharif/controller/UserController.java
  ir.maktabsharif.controller.UserController
-servlet/Authentication.java
- servlet.Authentication
+ir/maktabsharif/util/SMSPanel.java
+ ir.maktabsharif.util.SMSPanel
+ ir.maktabsharif.util.SMSPanel$ApiTokenResponse
 servlet/UserPosts.java
  servlet.UserPosts
 ir/maktabsharif/controller/PostController.java
  ir.maktabsharif.controller.PostController
-ir/maktabsharif/util/SMSPanel.java
- ir.maktabsharif.util.SMSPanel
- ir.maktabsharif.util.SMSPanel$ApiTokenResponse
+servlet/Authentication.java
+ servlet.Authentication

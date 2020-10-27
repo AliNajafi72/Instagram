@@ -22,6 +22,6 @@ public class Authentication extends HttpServlet {
             Cookie cookie = new Cookie("token", userOptional.get().getToken());
             resp.addCookie(cookie);
         }
-        resp.sendRedirect("http://localhost:8080/Gradle___org_example___Instagram_1_0_SNAPSHOT_war/login.html");
+        resp.sendRedirect("http://localhost:8080/Gradle___org_example___Instagram_1_0_SNAPSHOT_war");
     }
 }

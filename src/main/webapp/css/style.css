@@ -194,10 +194,6 @@ nav {
     padding: 5px;
 }
 
-@keyframes posts-image-brightness {
-    from {filter: brightness(100%)}
-    to {filter: brightness(30%)}
-}
 
 .col-4 {
     padding: 0;
@@ -221,6 +217,11 @@ nav {
     display: inline-block;
     margin-right: 10px;
     margin-left: 10px;
+}
+
+@keyframes posts-image-brightness {
+    from {filter: brightness(100%)}
+    to {filter: brightness(30%)}
 }
 
 @keyframes posts-icon-brightness {
