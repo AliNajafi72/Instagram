@@ -100,4 +100,18 @@ public class UserRepositoryImpl implements UserRepository {
         query.setParameter("keyword", "%" + keyWord + "%");
         return query.getResultList();
     }
+
+    @Override
+    public Optional<User> get(String token) {
+        EntityManager entityManager = EntityManagerFactorySingleton.getEntityManagerFactoryInstance().createEntityManager();
+        TypedQuery<User> query = entityManager.createNamedQuery("USER_FIND_BY_TOKEN", User.class);
+        query.setParameter("token", token);
+        List<User> users = query.getResultList();
+        if (users.size() > 0) {
+            Optional<User> userOptional = Optional.of(users.get(0));
+            return userOptional;
+        } else {
+            return Optional.empty();
+        }
+    }
 }

@@ -1,0 +1,229 @@
+* {
+    font-family: 'Poppins', sans-serif;
+}
+
+body {
+    background-color: #fafafa;
+}
+
+.nav-instagram-logo {
+    width: 25px;
+    margin-right: 20px;
+}
+
+.nav-logo-divider {
+    width: 1px;
+    height: 25px;
+    background-color: #a9a9a9;
+
+}
+
+.instagram-logo-title {
+    height: 25px;
+    margin-left: 20px;
+}
+
+.search-input {
+    border: solid darkgrey 1px;
+    background-color: lightgray;
+    border-radius: 3px;
+    height: 25px;
+    width: 200px;
+}
+
+nav {
+    background-color: white;
+    padding: 20px;
+}
+
+.search-placeholder-icon {
+    height: 10px;
+    margin-right: 10px;
+}
+
+.search-placeholder-title {
+    font-size: small;
+    color: gray;
+    margin: 0;
+    padding: 0;
+}
+
+.nav-middle-section {
+    position: relative;
+}
+
+.search-input-placeholder {
+    align-self: center;
+    position: absolute;
+    width: 50px;
+    display: block;
+    left: 65px;
+}
+
+.nav-icon {
+    height: 20px;
+    margin-right: 10px;
+}
+
+.top-navigation-container {
+    width: 70%;
+}
+
+.profile-inner-container {
+    width: 70%;
+}
+
+.profile-picture {
+    position: relative;
+    display: block;
+    width: 200px;
+    height: 200px;
+}
+
+.robot-profile-picture {
+    border-radius: 50%;
+    height: 150px;
+    z-index: 10;
+    align-self: center;
+    position: absolute;
+    border: solid #fafafa 5px;
+}
+
+.profile-gradient-border {
+    align-self: center;
+    display: block;
+    height: 155px;
+    width: 155px;
+    border-radius: 50%;
+    background: radial-gradient(circle at 30% 107%, #fdf497 0%, #fdf497 5%, #fd5949 45%,#d6249f 60%,#285AEB 90%);
+    position: absolute;
+    z-index: 1;
+}
+
+.profile-details-container {
+    padding: 50px;
+}
+
+.profile-details-container h3 {
+    display: inline;
+}
+
+.profile-details-container button {
+    display: inline-block;
+    width: 100px;
+    height: 30px;
+    border: none;
+    border-radius: 5px;
+    background-color: #0095f6;
+    color: white;
+    margin-left: 20px;
+}
+
+.triangle-icon-container {
+    background-color: #0095f6;
+    height: 30px;
+    width: 30px;
+    border-radius: 5px;
+    margin-left: 10px;
+}
+
+.triangle-icon {
+    display: block;
+    height: 10px;
+}
+
+.option-button-container {
+    display: inline-block;
+    height: 30px;
+    width: 30px;
+}
+
+.options-icon {
+    height: 15px;
+}
+
+.profile-details {
+    display: block;
+}
+
+.profile-details-text {
+    display: inline-block;
+    margin-right: 20px;
+}
+
+.bio {
+    margin-left: 20px;
+}
+
+.saved-stories-inner {
+    width: 70%;
+}
+
+.saved-stories-photo {
+    display: block;
+    width: 100px;
+    border-radius: 50%;
+    margin: 0 auto;
+}
+
+.saved-stories {
+    display: inline-block;
+}
+
+.saved-stories-title {
+    text-align: center;
+    margin-top: 10px;
+}
+
+.posts-inner-container {
+    width: 70%;
+}
+
+.posts-inner-grid {
+    width: 100%;
+    margin-top: 50px;
+}
+
+.post-content {
+    position: relative;
+}
+
+.post-image {
+    display: block;
+    width: 100%;
+    padding: 5px;
+}
+
+@keyframes posts-image-brightness {
+    from {filter: brightness(100%)}
+    to {filter: brightness(30%)}
+}
+
+.col-4 {
+    padding: 0;
+}
+
+.row {
+    width: 100%;
+}
+
+.post-icon-container {
+    visibility: hidden;
+    text-align: center;
+    width: 100%;
+    align-self: center;
+    position: absolute;
+    color: white;
+}
+
+.post-icon {
+    height: 20px;
+    display: inline-block;
+    margin-right: 10px;
+    margin-left: 10px;
+}
+
+@keyframes posts-icon-brightness {
+    from {visibility: hidden}
+    to {visibility: visible}
+}

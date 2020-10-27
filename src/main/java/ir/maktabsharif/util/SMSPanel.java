@@ -14,8 +14,8 @@ public class SMSPanel {
     private static final String SMS_SEND_URL = "https://RestfulSms.com/api/MessageSend";
     public String getApiToken() {
         JSONObject jsonObject = new JSONObject();
-        jsonObject.put("UserApiKey", "###");
-        jsonObject.put("SecretKey", "###");
+        jsonObject.put("UserApiKey", "#");
+        jsonObject.put("SecretKey", "#");
         HttpClient client = HttpClient.newBuilder()
                 .build();
         HttpRequest request = HttpRequest.newBuilder()

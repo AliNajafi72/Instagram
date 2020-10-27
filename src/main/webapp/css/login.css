@@ -1,0 +1,197 @@
+* {
+    font-family: Arial, serif;
+}
+body {
+    padding: 0;
+    margin: 0;
+    background-color: #fafafa;
+}
+
+.container {
+    margin: 0;
+    padding: 0;
+    display: grid;
+    grid-template-columns: 50% 50%;
+    grid-template-rows: auto;
+}
+
+.login-left {
+    display: inline-block;
+    text-align: end;
+}
+
+.login-right {
+    display: inline-block;
+    text-align: center;
+    padding: 50px;
+}
+
+.two-phone {
+    max-height: 500px;
+    margin-top: 50px;
+}
+
+.login-form-container {
+    min-width: 100%;
+    border: lightgray 0;
+}
+
+.logo-title {
+    max-width: 150px;
+    margin-top: 30px;
+}
+
+.login-form-container {
+    border: solid lightgray 2px;
+    border-radius: 3px;
+}
+
+.username-input {
+    display: block;
+    margin: 5px auto 5px auto;
+    min-width: 276px;
+    padding: 10px;
+}
+
+.password-input {
+    display: block;
+    margin: 5px auto 5px auto;
+    min-width: 276px;
+    padding: 10px;
+
+}
+
+.login-button {
+    background-color: #0095f6;
+    color: white;
+    min-width: 300px;
+    border: none;
+    padding: 10px;
+    border-radius: 5px;
+    margin-top: 10px;
+}
+
+.divider {
+    height: 50px;
+    width: 300px;
+    display: block;
+    margin: 0 auto;
+    background-color: aquamarine;
+}
+
+.horizontal-line {
+    background-color: lightgray;
+    height: 1px;
+    display: block;
+    margin: 25px 0 25px 0;
+}
+body {
+    padding: 0;
+    margin: 0;
+    background-color: #fafafa;
+}
+
+.container {
+    margin: 0;
+    padding: 0;
+    display: grid;
+    grid-template-columns: 50% 50%;
+    grid-template-rows: auto;
+}
+
+.login-left {
+    display: inline-block;
+    text-align: end;
+}
+
+.login-right {
+    display: inline-block;
+    text-align: center;
+    padding: 50px;
+}
+
+.two-phone {
+    max-height: 500px;
+    margin-top: 50px;
+}
+
+.login-form-container {
+    min-width: 100%;
+    border: lightgray 0;
+}
+
+.logo-title {
+    max-width: 150px;
+    margin-top: 30px;
+}
+
+.login-form-container {
+    border: solid lightgray 2px;
+    border-radius: 3px;
+    background-color: white;
+}
+
+.username-input {
+    display: block;
+    margin: 5px auto 5px auto;
+    min-width: 276px;
+    padding: 10px;
+    border: solid lightgray 2px;
+    border-radius: 3px;
+    background-color: #fafafa;
+}
+
+.password-input {
+    display: block;
+    margin: 5px auto 5px auto;
+    min-width: 276px;
+    padding: 10px;
+    border: solid lightgray 2px;
+    border-radius: 3px;
+    background-color: #fafafa;
+}
+
+.login-button {
+    background-color: #0095f6;
+    color: white;
+    min-width: 300px;
+    border: none;
+    padding: 10px;
+    border-radius: 5px;
+    margin-top: 10px;
+}
+
+.forgot-password-link {
+    display: block;
+    margin: 20px auto 20px auto;
+    text-decoration: none;
+    color: #195487;
+}
+
+.sign-up-box {
+    border: solid lightgray 2px;
+    border-radius: 3px;
+    background-color: white;
+    margin-top: 30px;
+}
+
+.sign-up-link {
+    text-decoration: none;
+    color: #0095f6;
+    display: inline-block;
+}
+
+.sign-up-box-text {
+    display: inline-block;
+    color: darkgray;
+}
+
+.get-app-text {
+
+}
+
+.download-icon {
+    display: inline-block;
+    max-width: 150px;
+    margin-right: 10px;
+}

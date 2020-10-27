@@ -16,6 +16,10 @@ import java.util.List;
                 name = "USER_SEARCH",
                 query = "SELECT u FROM User u WHERE username LIKE :keyword"
         ),
+        @NamedQuery(
+                name = "USER_FIND_BY_TOKEN",
+                query = "SELECT u FROM User u WHERE u.token=:token"
+        )
 })
 public class User {
     @Id
@@ -42,6 +46,8 @@ public class User {
             inverseJoinColumns = {@JoinColumn(name = "FK_FOLLOWER")}
     )
     private List<User> followers = new ArrayList<>();
+    @Column(name = "TOKEN")
+    private String token;
 
     public Long getUserId() {
         return userId;
@@ -113,6 +119,14 @@ public class User {
 
     public void setFollowers(List<User> followers) {
         this.followers = followers;
+    }
+
+    public String getToken() {
+        return token;
+    }
+
+    public void setToken(String token) {
+        this.token = token;
     }
 
     @Override

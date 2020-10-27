@@ -5,6 +5,7 @@ import ir.maktabsharif.repository.impls.UserRepositoryImpl;
 import ir.maktabsharif.util.SMSPanel;
 import ir.maktabsharif.util.ScannerSingleton;
 
+import javax.swing.text.html.Option;
 import java.util.List;
 import java.util.Optional;
 
@@ -19,37 +20,27 @@ public class UserController implements Controller {
         }
     }
 
-    public void authenticate() {
-        System.out.println("Please enter username:");
-        String username = ScannerSingleton.getScannerInstance().nextLine();
-        System.out.println("Please enter password:");
-        String password = ScannerSingleton.getScannerInstance().nextLine();
+    public Optional<User> authenticate(
+            String username,
+            String password
+    ) {
         Optional<User> userOptional = userRepository.findUserByUsername(username);
         if (userOptional.isPresent() && userOptional.get().getPassword().equals(password)) {
-            SMSPanel smsPanel = new SMSPanel();
-            smsPanel.sendSMS(userOptional.get().getVerificationCode().toString(), userOptional.get().getPhoneNumber());
-            System.out.println("Please enter verification code sent to your phone:");
-            Integer enteredVerificationCode = Integer.parseInt(ScannerSingleton.getScannerInstance().nextLine());
-            Integer verificationCode = userOptional.get().getVerificationCode();
-            if (verificationCode.equals(enteredVerificationCode)) {
-                user = userOptional.get();
-            } else {
-                System.out.println("Incorrect verification code!");
-            }
+            int randomNumber = (int) ((Math.random() * (9999 - 1000)) + 1000);
+            userOptional.get().setToken(Integer.toString(randomNumber));
+            userRepository.update(userOptional.get());
+            return userOptional;
         } else {
-            System.out.println("Username or password is incorrect!");
+            return Optional.empty();
         }
     }
 
-    public void register() {
-        System.out.println("Please enter full name:");
-        String fullName = ScannerSingleton.getScannerInstance().nextLine();
-        System.out.println("Please enter username:");
-        String username = ScannerSingleton.getScannerInstance().nextLine();
-        System.out.println("Please enter password:");
-        String password = ScannerSingleton.getScannerInstance().nextLine();
-        System.out.println("Please enter phone number:");
-        String phoneNumber = ScannerSingleton.getScannerInstance().nextLine();
+    public void register(
+            String phoneNumber,
+            String fullName,
+            String username,
+            String password
+    ) {
         Integer verificationCode = (int) ((Math.random() * (9999 - 1000)) + 1000);
         User user = new User();
         user.setFullName(fullName);
@@ -57,6 +48,8 @@ public class UserController implements Controller {
         user.setPassword(password);
         user.setPhoneNumber(phoneNumber);
         user.setVerificationCode(verificationCode);
+//        SMSPanel smsPanel = new SMSPanel();
+//        smsPanel.sendSMS(phoneNumber, verificationCode.toString());
         userRepository.save(user);
     }
 
@@ -105,6 +98,10 @@ public class UserController implements Controller {
         } else {
             System.out.println("Please login to proceed!");
         }
+    }
+
+    public Optional<User> authenticatedUser(String token) {
+        return userRepository.get(token);
     }
 }
 

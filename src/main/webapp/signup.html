@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Sign Up</title>
+    <link rel="stylesheet" href="css/signup.css">
+    <link rel="icon" href="img/favicon.png">
+    <link rel="stylesheet" href="node_modules/animate.css/animate.css">
+</head>
+<body>
+<div class="container">
+    <div class="middle">
+        <div class="sign-up-box">
+            <img class="logo-title" src="./img/instagram-logo-title.png" alt="Instagram logo title">
+            <b><p class="sign-up-box-top-text">Sign up to see photos and videos from your friends.</p></b>
+            <form class="login-form" method="post" action="http://localhost:8080/Gradle___org_example___Instagram_1_0_SNAPSHOT_war/registration">
+                <input type="text" class="input" placeholder="Phone number or email" name="phone-number">
+                <input type="text" class="input" placeholder="Full name" name="full-name">
+                <input type="text" class="input" placeholder="Username" name="username">
+                <input type="password" class="password-input" placeholder="Password" name="password">
+                <input type="submit" class="animate__animated animate__pulse login-button" value="Log In">
+            </form>
+            <p class="sign-up-box-bottom-text">By signing up, you agree to our Terms , Data Policy and Cookies
+                Policy.</p>
+        </div>
+        <div class="animate__animated animate__shakeX sign-up-box">
+            <p class="login-box-text">Have an account?</p>
+            <a class="login-link" href="./index.html">Login</a>
+        </div>
+        <p class="get-app-text">Get the app.</p>
+        <img class="download-icon" src="img/app-store.png" alt="Download from app store">
+        <img class="download-icon" src="img/google-play.png" alt="Download from google play">
+
+    </div>
+</div>
+</body>
+</html>

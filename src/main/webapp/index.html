@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Login</title>
+    <link rel="icon" href="img/favicon.png">
+    <link rel="stylesheet" href="css/login.css">
+</head>
+<body>
+<div class="container">
+    <div class="login-left">
+        <img class="two-phone" src="img/two-phone.JPG" alt="Instagram Phone">
+    </div>
+    <div class="login-right">
+        <div class="login-form-container">
+            <img class="logo-title" src="img/instagram-logo-title.png" alt="Logo Title">
+            <form class="login-form" method="post" action="http://localhost:8080/Gradle___org_example___Instagram_1_0_SNAPSHOT_war/authentication">
+                <input type="text" class="username-input" placeholder="Phone number, username or email" name="username">
+                <input type="password" class="password-input" placeholder="Password" name="password">
+                <input type="submit" class="login-button" value="Log In">
+                <a class="forgot-password-link" href="#">Forgot password?</a>
+            </form>
+        </div>
+        <div class="sign-up-box">
+            <p class="sign-up-box-text">Don't have an account?</p>&nbsp<a class="sign-up-link" href="./signup.html">Sign up</a>
+        </div>
+        <p class="get-app-text">Get the app.</p>
+        <img class="download-icon" src="img/app-store.png" alt="Download from app store">
+        <img class="download-icon" src="img/google-play.png" alt="Download from google play">
+    </div>
+</div>
+</body>
+</html>

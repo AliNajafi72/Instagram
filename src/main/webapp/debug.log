@@ -1,0 +1,6 @@
+[1015/112419.172:ERROR:directory_reader_win.cc(43)] FindFirstFile: The system cannot find the path specified. (0x3)
+[1015/141743.181:ERROR:directory_reader_win.cc(43)] FindFirstFile: The system cannot find the path specified. (0x3)
+[1015/151435.478:ERROR:directory_reader_win.cc(43)] FindFirstFile: The system cannot find the path specified. (0x3)
+[1015/210942.293:ERROR:directory_reader_win.cc(43)] FindFirstFile: The system cannot find the path specified. (0x3)
+[1016/014559.246:ERROR:directory_reader_win.cc(43)] FindFirstFile: The system cannot find the path specified. (0x3)
+[1017/133501.990:ERROR:filesystem_win.cc(129)] GetFileAttributes C:\Users\Ali\AppData\Local\Microsoft\Edge\User Data\Crashpad\attachments\d6920e60-34f0-4e5d-a9af-b4038cf041e7: The system cannot find the path specified. (0x3)

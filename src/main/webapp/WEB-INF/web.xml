@@ -4,4 +4,30 @@
 
 <web-app>
   <display-name>Archetype Created Web Application</display-name>
+  <servlet>
+    <servlet-name>Register</servlet-name>
+    <servlet-class>servlet.Registration</servlet-class>
+  </servlet>
+  <servlet>
+    <servlet-name>Authentication</servlet-name>
+    <servlet-class>servlet.Authentication</servlet-class>
+  </servlet>
+  <servlet>
+    <servlet-name>UserPosts</servlet-name>
+    <servlet-class>servlet.UserPosts</servlet-class>
+  </servlet>
+
+
+  <servlet-mapping>
+    <servlet-name>Register</servlet-name>
+    <url-pattern>/registration</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>Authentication</servlet-name>
+    <url-pattern>/authentication</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>UserPosts</servlet-name>
+    <url-pattern>/userposts</url-pattern>
+  </servlet-mapping>
 </web-app>

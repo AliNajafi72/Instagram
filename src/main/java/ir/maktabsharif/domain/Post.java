@@ -32,6 +32,10 @@ public class Post {
     @CollectionTable(name = "comments", joinColumns = @JoinColumn(name = "POST_ID"))
     @Column(name = "COMMENT")
     private List<String> comments = new ArrayList<>();
+    @ElementCollection
+    @CollectionTable(name = "comments", joinColumns = @JoinColumn(name = "POST_ID"))
+    @Column(name = "HASHTAG")
+    private List<String> hashtags;
 
     public String getContent() {
         return content;
@@ -87,6 +91,18 @@ public class Post {
 
     public void addComment(String comment) {
         comments.add(comment);
+    }
+
+    public List<String> getHashtags() {
+        return hashtags;
+    }
+
+    public void setHashtags(List<String> hashtags) {
+        this.hashtags = hashtags;
+    }
+
+    public void addHashtag(String hashtag) {
+        hashtags.add(hashtag);
     }
 
     @Override

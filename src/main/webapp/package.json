@@ -1,0 +1,17 @@
+{
+  "name": "instagram",
+  "version": "1.0.0",
+  "dependencies": {
+    "animate.css": "^4.1.1",
+    "bootstrap": "^4.5.3",
+    "jquery": "^3.5.1",
+    "slick-carousel": "^1.8.1"
+  },
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "description": ""
+}

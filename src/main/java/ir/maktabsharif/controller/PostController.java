@@ -48,16 +48,9 @@ public class PostController implements Controller {
         userRepository.update(user);
     }
 
-    public void getUserPosts() {
-        System.out.println("Please enter user id to show the posts:");
-        long userId = Integer.parseInt(ScannerSingleton.getScannerInstance().nextLine());
+    public List<Post> getUserPosts(Long userId) {
         List<Post> posts = postRepository.findAllPostsByUserId(userId);
-        for (Post post:posts) {
-            System.out.println(
-                    "Post id: " + post.getPostId() + "\n"
-                    + "Post content: " + post.getContent() + "\n"
-            );
-        }
+        return posts;
     }
 
     public int likePost() {
